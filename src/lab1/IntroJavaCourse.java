@@ -3,14 +3,21 @@ package lab1;
 import javax.swing.JOptionPane;
 
 /**
- * Describe responsibilities here.
+ * This class sets up the Intro to Java Course, inheriting from 
+ * CourseDescription.  This constructor requires 3 fields: courseName, 
+ * courseNumber, and courseCredits.  All 3 fields are validated in their
+ * respective validate methods.  If the values pass the validations, they
+ * are passed to the set methods of the the superclass.  If they fail the
+ * validations, default values are passed to the set methods.
+ * Because this course DOES have prerequisites, the CourseHasPrerequisite 
+ * indicator in the parent class is set to true.
  *
  * @author      Mary King
  * @version     1.00
  */
 public class IntroJavaCourse extends CourseDescription {
     //should this be array?
-    private String prerequisites;
+    private String[] prerequisites;
 
     public IntroJavaCourse(String courseName, String courseNumber,
             double courseCredits) {
@@ -29,6 +36,27 @@ public class IntroJavaCourse extends CourseDescription {
         setCourseHasPrerequisite(true); //prereq needed for this course
     }
 
+    public final String[] getPrerequisites() {
+        return prerequisites;
+    }
+
+    public final void setPrerequisites(String[] prerequisites) {
+
+        if (prerequisites == null || prerequisites.length == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: at least one Prerequisites course is required");
+            return;
+        }
+        for (int sub = 0; sub < prerequisites.length; sub++) {
+            if (prerequisites[sub] == null || prerequisites[sub].length() == 0) {
+                JOptionPane.showMessageDialog(null,
+                        "Error: Prerequisite cannot be null or empty string");
+                return;
+            } else {
+                this.prerequisites[sub] = prerequisites[sub];
+            }
+        }
+    }
 
     @Override
     public final boolean validateCourseName(String courseName) {
