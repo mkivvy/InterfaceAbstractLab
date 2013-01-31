@@ -5,21 +5,26 @@ import javax.swing.JOptionPane;
 /**
  * Describe responsibilities here.
  *
- * @author      your name goes here
+ * @author      Mary King
  * @version     1.00
  */
 public class AdvancedJavaCourse {
+    //need private
     String courseName;
     private String courseNumber;
+    //credits not used here?
     private double credits;
+    //array?
     private String prerequisites;
 
     public AdvancedJavaCourse(String courseName, String courseNumber) {
+        //needs validation
         this.setCourseName(courseName);
         this.setCourseNumber(courseNumber);
     }
 
     public String getCapitalizedCourseName() {
+        //why would capitalized course name be unique to only this course?
         return this.getCourseName().toUpperCase();
     }
 
@@ -51,14 +56,17 @@ public class AdvancedJavaCourse {
     }
 
     public void setCourseName(String courseName) {
+        //need validation
         this.courseName = courseName;
     }
 
     public String getCourseNumber() {
+        //need validation
         return courseNumber;
     }
 
     public void setCourseNumber(String courseNumber) {
+        //needs validation
         this.courseNumber = courseNumber;
     }
     
