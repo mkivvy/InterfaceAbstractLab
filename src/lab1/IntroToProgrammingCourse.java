@@ -44,7 +44,7 @@ public class IntroToProgrammingCourse {
         if(credits < 0.5 || credits > 4.0) {
             JOptionPane.showMessageDialog(null,
                     "Error: credits must be in the range 0.5 to 4.0");
-            //don't we want return?
+            //don't we want return? no
             System.exit(0);
         }
         this.credits = credits;
