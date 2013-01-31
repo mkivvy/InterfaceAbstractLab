@@ -1,5 +1,7 @@
 package lab1;
 
+import javax.swing.JOptionPane;
+
 /**
  * Describe responsibilities here.
  *
@@ -7,68 +9,57 @@ package lab1;
  * @version     1.00
  */
 public class IntroJavaCourse extends CourseDescription {
-    //need private
-    //course name is set only in constructor w/ no validation & has not getter
-    String courseName;
-    private String courseNumber;
-    private double credits;
     //should this be array?
     private String prerequisites;
 
-    public IntroJavaCourse(String courseName, String courseNumber) {
-        //needs validation
-        this.courseName = courseName;
-        this.courseNumber = courseNumber;
+    public IntroJavaCourse(String courseName, String courseNumber,
+            double courseCredits) {
+        if (validateCourseName(courseName))
+            setCourseName(courseName);
+        else setCourseName("Intro to Java");
+        
+        if (validateCourseNumber(courseNumber))
+            setCourseNumber(courseNumber);
+        else setCourseNumber("000");
+
+        if (validateCourseCredits(courseCredits))
+            setCourseCredits(courseCredits);
+        else setCourseCredits(MIN_CREDITS);
+        
+        setCourseHasPrerequisite(true); //prereq needed for this course
     }
 
-    public String getCourseNumber() {
-        return courseNumber;
-    }
 
-    public void setCourseNumber(String courseNumber) {
-        //validate
-        this.courseNumber = courseNumber;
-    }
-
-    public double getCredits() {
-        return credits;
-    }
-
-
-    public String getPrerequisites() {
-        return prerequisites;
-    }
-
-    public void setPrerequisites(String prerequisites) {
-        //validate
-        this.prerequisites = prerequisites;
-    }
-
-        public void setCredits(double credits) {
-            //check numeric? 
-            //note this check differs from IntorP
-        if(credits < 0 || credits > 5.0) {
-            System.out.println(
-                    "Error: credits must be in the range 0.5 to 4.0");
-            //return instead?
-            return;
+    @Override
+    public final boolean validateCourseName(String courseName) {
+        if(courseName == null || courseName.length() == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: Course Name cannot be null or empty string");
+            return (false);
         }
-        this.setCredits(credits);
+        return(true);
     }
 
     @Override
-    public boolean validateCourseName(String courseName) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public final boolean validateCourseNumber(String courseNumber) {
+        if(courseNumber == null || courseNumber.length() == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: Course Number cannot be null or empty string");
+            return (false);
+        }
+        return(true);
     }
 
     @Override
-    public boolean validateCourseNumber(String courseNumber) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public boolean validateCourseCredits(double courseCredits) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public final boolean validateCourseCredits(double courseCredits) {
+        if(courseCredits < MIN_CREDITS || courseCredits > MAX_CREDITS) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: Course Credits must be in the range " 
+                    + MIN_CREDITS + " to "
+                    + MAX_CREDITS);
+            return (false);
+        }
+        return(true);
     }
 
 }

@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
  * @version     1.00
  */
 public class IntroToProgrammingCourse extends CourseDescription {
+    private double minCourseCredits = 0.5; //this course requires at least 0.5
     
     public IntroToProgrammingCourse(String courseName, String courseNumber,
             double courseCredits) {
@@ -29,7 +30,7 @@ public class IntroToProgrammingCourse extends CourseDescription {
 
         if (validateCourseCredits(courseCredits))
             setCourseCredits(courseCredits);
-        else setCourseCredits(1.0);
+        else setCourseCredits(minCourseCredits);
         
         setCourseHasPrerequisite(false); //NO prereq needed for this course
     }
@@ -58,9 +59,10 @@ public class IntroToProgrammingCourse extends CourseDescription {
     public final boolean validateCourseCredits(double courseCredits) {
         //should we verify numeric? couldn't find anything online that indicates
         //numeric check is needed if a double is passed in - only for strings
-        if(courseCredits < 0.5 || courseCredits > MAX_CREDITS) {
+        if(courseCredits < minCourseCredits || courseCredits > MAX_CREDITS) {
             JOptionPane.showMessageDialog(null,
-                    "Error: Course Credits must be in the range 0.5 to "
+                    "Error: Course Credits must be in the range " 
+                    + minCourseCredits + " to "
                     + MAX_CREDITS);
             return (false);
         }
