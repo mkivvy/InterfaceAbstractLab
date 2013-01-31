@@ -13,13 +13,15 @@ import javax.swing.JOptionPane;
  * parent class is set to true.  
  * This class also includes a String array to contain any prerequisites this
  * course needs.  There is a setter and getter for this array.
- *
+ * (Note: I removed the method getCapitalizedCourseName since that's a simple
+ * String function that can be applied to the data in the calling program once
+ * it is retrieved.  It was also not needed elsewhere in this class.)
  * @author Mary King
  * @version 1.00
  */
 public class AdvancedJavaCourse extends CourseDescription {
     private String[] prerequisites;
-    private double minCourseCredits = 0.5;
+    private double minCourseCredits = 0.5; //this course requires at least 0.5
 
     public AdvancedJavaCourse(String courseName, String courseNumber,
             double courseCredits) {

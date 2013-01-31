@@ -20,10 +20,10 @@ Instructions for Lab #1:
 ----------------------
 X1. Create an abstract super class that contains COMMON properties and methods
    to be inherited by the sub-classes that are provided.
-2. Modify your sub-classes to take advantage of this inheritance. Will you
+X2. Modify your sub-classes to take advantage of this inheritance. Will you
    need to re-implement and/or override methods? Will you need to re-declare all
    properties?
-3. Fix any and all encapsulation problems.
+X3. Fix any and all encapsulation problems.
 4. Create a startup class to test your code. In this startup class create and
    use at least one instance of each sub-class.
 5. In the startup class document what you think is good or bad about this
