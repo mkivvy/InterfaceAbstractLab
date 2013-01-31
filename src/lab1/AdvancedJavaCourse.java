@@ -10,14 +10,14 @@ import javax.swing.JOptionPane;
  * passed to the set methods of the the superclass. If they fail the
  * validations, default values are passed to the set methods. Because this
  * course DOES have prerequisites, the CourseHasPrerequisite indicator in the
- * parent class is set to true.
+ * parent class is set to true.  
+ * This class also includes a String array to contain any prerequisites this
+ * course needs.  There is a setter and getter for this array.
  *
  * @author Mary King
  * @version 1.00
  */
 public class AdvancedJavaCourse extends CourseDescription {
-    //array?
-
     private String[] prerequisites;
     private double minCourseCredits = 0.5;
 
@@ -42,10 +42,6 @@ public class AdvancedJavaCourse extends CourseDescription {
         }
 
         setCourseHasPrerequisite(true); //prereq needed for this course
-    }
-
-    public final String getCapitalizedCourseName() {
-        return getCourseName().toUpperCase();
     }
 
     public final String[] getPrerequisites() {

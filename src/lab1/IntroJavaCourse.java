@@ -11,12 +11,13 @@ import javax.swing.JOptionPane;
  * validations, default values are passed to the set methods.
  * Because this course DOES have prerequisites, the CourseHasPrerequisite 
  * indicator in the parent class is set to true.
+ * This class also includes a String array to contain any prerequisites this
+ * course needs.  There is a setter and getter for this array.
  *
  * @author      Mary King
  * @version     1.00
  */
 public class IntroJavaCourse extends CourseDescription {
-    //should this be array?
     private String[] prerequisites;
 
     public IntroJavaCourse(String courseName, String courseNumber,
