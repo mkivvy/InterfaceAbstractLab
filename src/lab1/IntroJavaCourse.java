@@ -6,7 +6,7 @@ package lab1;
  * @author      Mary King
  * @version     1.00
  */
-public class IntroJavaCourse {
+public class IntroJavaCourse extends CourseDescription {
     //need private
     //course name is set only in constructor w/ no validation & has not getter
     String courseName;
@@ -51,9 +51,24 @@ public class IntroJavaCourse {
             System.out.println(
                     "Error: credits must be in the range 0.5 to 4.0");
             //return instead?
-            System.exit(0);
+            return;
         }
         this.setCredits(credits);
+    }
+
+    @Override
+    public boolean validateCourseName(String courseName) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean validateCourseNumber(String courseNumber) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean validateCourseCredits(double courseCredits) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }

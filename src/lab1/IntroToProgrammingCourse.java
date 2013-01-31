@@ -3,66 +3,68 @@ package lab1;
 import javax.swing.JOptionPane;
 
 /**
- * Describe responsibilities here. NOTE: this class has NO PREREQUISITES!
- * Do not change this fact.
+ * This class sets up the Intro to Programming Course, inheriting from 
+ * CourseDescription.  This constructor requires 3 fields: courseName, 
+ * courseNumber, and courseCredits.  All 3 fields are validated in their
+ * respective validate methods.  If the values pass the validations, they
+ * are passed to the set methods of the the superclass.  If they fail the
+ * validations, default values are passed to the set methods.
+ * Because this course has NO PREREQUISITES, the CourseHasPrerequisite 
+ * indicator in the parent class is set to false.
  *
  * @author      Mary King
  * @version     1.00
  */
-public class IntroToProgrammingCourse {
-    private String courseName;
-    private String courseNumber;
-    private double credits;
+public class IntroToProgrammingCourse extends CourseDescription {
+    
+    public IntroToProgrammingCourse(String courseName, String courseNumber,
+            double courseCredits) {
+        if (validateCourseName(courseName))
+            setCourseName(courseName);
+        else setCourseName("Intro to Programming");
+        
+        if (validateCourseNumber(courseNumber))
+            setCourseNumber(courseNumber);
+        else setCourseNumber("000");
 
-    public IntroToProgrammingCourse(String courseName, String courseNumber) {
-        //needs validation - call set methods?
-        this.setCourseName(courseName);
-        this.setCourseNumber(courseNumber);
+        if (validateCourseCredits(courseCredits))
+            setCourseCredits(courseCredits);
+        else setCourseCredits(1.0);
+        
+        setCourseHasPrerequisite(false); //NO prereq needed for this course
     }
 
-    public String getCourseNumber() {
-        return courseNumber;
-    }
-
-    public final void setCourseNumber(String courseNumber) {
-        if(courseNumber == null || courseNumber.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseNumber cannot be null of empty string");
-            //don't we want return?
-            System.exit(0);
-        }
-        this.courseNumber = courseNumber;
-    }
-
-    public double getCredits() {
-        return credits;
-    }
-
-    public void setCredits(double credits) {
-        //should we verify numeric?
-        //note this check differs from IntorJ
-        if(credits < 0.5 || credits > 4.0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: credits must be in the range 0.5 to 4.0");
-            //don't we want return? no
-            System.exit(0);
-        }
-        this.credits = credits;
-    }
-
-    public String getCourseName() {
-        return courseName;
-    }
-
-    public final void setCourseName(String courseName) {
+    @Override
+    public final boolean validateCourseName(String courseName) {
         if(courseName == null || courseName.length() == 0) {
             JOptionPane.showMessageDialog(null,
-                    "Error: courseName cannot be null of empty string");
-            //don't we want return?
-            System.exit(0);
+                    "Error: Course Name cannot be null or empty string");
+            return (false);
         }
-        this.courseName = courseName;
+        return(true);
     }
 
-    
+    @Override
+    public final boolean validateCourseNumber(String courseNumber) {
+        if(courseNumber == null || courseNumber.length() == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: Course Number cannot be null or empty string");
+            return (false);
+        }
+        return(true);
+    }
+
+    @Override
+    public final boolean validateCourseCredits(double courseCredits) {
+        //should we verify numeric? couldn't find anything online that indicates
+        //numeric check is needed if a double is passed in - only for strings
+        if(courseCredits < 0.5 || courseCredits > MAX_CREDITS) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: Course Credits must be in the range 0.5 to "
+                    + MAX_CREDITS);
+            return (false);
+        }
+        return(true);
+    }
+
 }

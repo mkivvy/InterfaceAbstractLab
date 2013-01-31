@@ -46,12 +46,15 @@ public abstract class CourseDescription {
     public static final double MIN_CREDITS = 0.0;
     public static final double MAX_CREDITS = 4.0;
 
-    //courseName is to be validated in any class derived from this one
-    public abstract void validateCourseName();
-    //courseNumber is to be validated in any class derived from this one
-    public abstract void validateCourseNumber();
-    //courseCredits is to be validated in any class derived from this one
-    public abstract void validateCourseCredits();
+    //courseName is to be validated in any class derived from this one -
+    //return true if valiaation passes & false if not
+    public abstract boolean validateCourseName(String courseName);
+    //courseNumber is to be validated in any class derived from this one - 
+    //return true if valiaation passes & false if not
+    public abstract boolean validateCourseNumber(String courseNumber);
+    //courseCredits is to be validated in any class derived from this one -
+    //return true if valiaation passes & false if not
+    public abstract boolean validateCourseCredits(double courseCredits);
     
     //returns value of courseName as stored
     public final String getCourseName() {
@@ -64,8 +67,8 @@ public abstract class CourseDescription {
     public final void setCourseName(String courseName) {
         if (courseName == null || courseName.length() == 0) {
             JOptionPane.showMessageDialog(null,
-                    "Error: courseName cannot be null or empty string");
-            System.exit(0);
+                    "Error: Course Name cannot be null or empty string");
+            return;
         }
         this.courseName = courseName;
     }
@@ -81,8 +84,8 @@ public abstract class CourseDescription {
     public final void setCourseNumber(String courseNumber) {
         if(courseNumber == null || courseNumber.length() == 0) {
             JOptionPane.showMessageDialog(null,
-                    "Error: courseNumber cannot be null of empty string");
-            System.exit(0);
+                    "Error: Course Number cannot be null or empty string");
+            return;
         }
         this.courseNumber = courseNumber;
     }
@@ -98,8 +101,9 @@ public abstract class CourseDescription {
     public final void setCourseCredits(double courseCredits) {
         if(courseCredits < MIN_CREDITS || courseCredits > MAX_CREDITS) {
             JOptionPane.showMessageDialog(null,
-                    "Error: credits are out of range");
-            System.exit(0);
+                    "Error: Course Credits must be in the range " + MIN_CREDITS
+                    + " to " + MAX_CREDITS);
+            return;
         }
         this.courseCredits = courseCredits;
     }
