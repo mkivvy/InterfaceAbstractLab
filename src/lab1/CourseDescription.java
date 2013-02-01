@@ -121,7 +121,7 @@ public abstract class CourseDescription {
     @Override
     public String toString() {
         return ("Course: " + courseName + "\nNumber: " + courseNumber 
-                + "\nCredits:" + courseCredits + "Prerequisites: "
+                + "\nCredits: " + courseCredits + "\nPrerequisites: "
                 + (courseHasPrerequisite ? "yes" : "no"));
         
     }
