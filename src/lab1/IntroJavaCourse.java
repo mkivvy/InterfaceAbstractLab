@@ -41,7 +41,7 @@ public class IntroJavaCourse extends CourseDescription {
         return prerequisites;
     }
 
-    public final void setPrerequisites(String[] prerequisites) {
+    public void setPrerequisites(String[] prerequisites) {
 
         if (prerequisites == null || prerequisites.length == 0) {
             JOptionPane.showMessageDialog(null,

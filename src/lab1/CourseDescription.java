@@ -117,4 +117,12 @@ public abstract class CourseDescription {
     public final void setCourseHasPrerequisite(boolean courseHasPrerequisite) {
         this.courseHasPrerequisite = courseHasPrerequisite;
     }
+    
+    @Override
+    public String toString() {
+        return ("Course: " + courseName + "\nNumber: " + courseNumber 
+                + "\nCredits:" + courseCredits + "Prerequisites: "
+                + (courseHasPrerequisite ? "yes" : "no"));
+        
+    }
 }
