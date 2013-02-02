@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * 1 of any of these classes?"  The answer - that you wouldn't! - hit me as I
  * struggled to set up good test data.  Now that I have completed this portion 
  * of the assignment, I am going to attempt to do it the right way - using
- * Course as a base classes with CourseWithPrerequisites inherit from it.  
+ * Course as a base class.  Please see the continuation of this work in lab1A.
  * Good:  
  * @author Mary King
  * @version 1.00
@@ -28,7 +28,7 @@ public class StartProgram {
 //
         IntroJavaCourse java1 = new IntroJavaCourse
                 ("Introduction to Java Programming", "150-0011", 2.0);
-        String[] prerequisites1 = {"Introduction to Programming", "Another class"};
+        String[] prerequisites1 = {"Introduction to Programming"};
         java1.setPrerequisites(prerequisites1);
         courses[0] = java1;
 //

@@ -1,31 +1,29 @@
 package lab1A;
 
-import javax.swing.JOptionPane;
-
 /**
  * This abstract class contains general properties and methods for describing a
- * college course. - Course name, course number, and credits are common
- * attributes for all courses so they have been defined here in the abstract
- * class. All three also have getters and setters. The setters do basic
- * validation, but validation methods have been declared here as abstract
- * methods so they are required for each of these fields in the child. Course
- * names and numbers can vary in format by department, for example. - Similarly,
- * course credit validation may vary by department so only basic validation is
- * done here using the minimum and maximum credit hours. MIN and MAX credits are
- * defined here as constants as the widest range of credits currently known, but
- * can easily be changed here in just this one place if the range changes. -
- * Validation is tricky. My validation uses the JOptionPane class to display
- * validation messages because that seemed to be the standard for the 3 classes
- * written, but I'm not really comfortable with this. It locks all children into
- * using this method for errors and that may not be a good thing. This class
- * would be need to be changed if a different communication path was needed.
- * Still, if there are errors, they need to be communicated somehow. I could
- * send back a return value indicating an error occurred and store the error
- * message in a string to be retrieved, but then the method is no longer a real
- * 'setter'. That's the reason I continued to used JOptionPane, even realizing
- * it's not a great answer. - I have included an indicator field to be set to
- * true if a course requires any prerequisites and false if it does not. The
- * actual prerequisites are to be stored in derived classes.
+ * college course. 
+ * - Course name, course number, and credits are common attributes for all 
+ * courses here so they have been defined here in the abstract
+ * class. All three have getters that return the value of the respective field.
+ * - Course name, course number, and credits all also have setters that call the 
+ * validation methods have been declared here as abstract.  These are to be
+ * coded in the derived class.  Course names and numbers can vary in format 
+ * by department, for example. 
+ * - Similarly, course credit validation may vary by department. However,
+ * MIN_CREDITS and MAX_CREDITS credits are defined here as constants using the 
+ * widest range of credits currently known. Child classes may use their own
+ * minimum & maximum number of credits, if necessary, but defining these as
+ * global constants means these values can easily be changed in just this one 
+ * place if the range changes. 
+ * - Having the child class handle validation allows the child to determine
+ * how error messages are to be displayed rather than forcing JOptionPane
+ * to be used.
+ * - There is an indicator field, courseHasPrerequisite, to be set to true if 
+ * a course requires any prerequisites and false if it does not. 
+ * - There is also a String array, prerequisites, to be validated in the derived
+ * class and then populated with the course names (or course numbers, depending 
+ * on the child class's needs) of the courses that are the prerequisites.
  *
  * @author Mary King
  * @version 1.00
@@ -74,7 +72,6 @@ public abstract class Course {
         } else {
             this.courseName = "Default Course Name";
         }
-        System.out.println("\ncourse name = " + this.courseName);
     }
 
     //returns value of courseNumber as stored
@@ -90,8 +87,6 @@ public abstract class Course {
         } else {
             this.courseNumber = "000-Default-Course-Number";
         }
-        System.out.println("\ncourse number = " + this.courseNumber);
-
     }
 
     //returns value of courseCredits as stored
@@ -107,7 +102,6 @@ public abstract class Course {
         } else {
             this.courseCredits = 0.0;
         }
-        System.out.println("\ncourse credits = " + this.courseCredits);
     }
 
     //returns value of true if a course haas prerequisite & false if not
@@ -145,8 +139,7 @@ public abstract class Course {
             this.prerequisites = new String[prerequisites.length];
             for (int sub = 0; sub < prerequisites.length; sub++) {
                 if (prerequisites[sub] == null || prerequisites[sub].length() == 0) {
-                    JOptionPane.showMessageDialog(null,
-                            "Error: Prerequisite cannot be null or empty string");
+                    //this should never happen if validation passed, but justincase
                     return;
                 } else {
                     this.prerequisites[sub] = prerequisites[sub];
@@ -155,7 +148,6 @@ public abstract class Course {
         } else {
             this.prerequisites = new String[1];
             this.prerequisites[0] = "no prerequisites listed";
-        System.out.println("\nfirst prereq = " + this.prerequisites[0]);
         }
     }
 
