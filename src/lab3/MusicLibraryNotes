@@ -14,6 +14,9 @@ music classification (baroque,etc)
 Classical - sympohnic soloist:  album, name of piece, 	composer, soloist, conductor?, 
 symphony?, music classification (baroque,etc)
 
+Classical - non-sympohnic soloist:  album, name of piece, 	composer, soloist,  
+accompanist, music classification (baroque,etc)
+
 Jazz - album, song title, 	main artist, group name, group members, composer
 
 Soundtrack - album, song title, 	show name, show composers, singers, production
@@ -21,7 +24,7 @@ Soundtrack - album, song title, 	show name, show composers, singers, production
 ----------------------------------------------------------------------------------
 
 Commonalities: 
-	album title (if there is one)
+	album/grouping title (if there is one)
 	main genre
 	recording type
 		For the commonalities there would be many songs/pieces
@@ -34,5 +37,17 @@ Genre specific: there would be one set of these for each song/piece
 	Jazz - soloists, group name, group members, composer
 	Soundtrack - singers, show name, show composers, production
 	Classical (All) - composer, music classification
-		(Sympohny) symphony, conductor
-			(Sympohnic solo) soloists
+		(Symphony) symphony, conductor
+			(Symphonic solo) soloists
+		(Solos) soloist, accompanist
+
+a separate class for group members? to be used in pop/rock & jazz? maybe later
+------------------------------------------------------------------------------
+Commonalities would be a superclass - called what? - abstract or interface?  
+
+1st level child classes would be of 3 types each containing song title & info 
+specific to type - these could be concrete - end of the line at this point for
+3 types, but maybe not for classical
+
+2nd level child for classical - symphonic, symphonic w/ soloist, solo - these
+would be concrete

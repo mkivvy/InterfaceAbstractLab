@@ -18,7 +18,7 @@ Objectives for Lab #3:
 
 Instructions for Lab #3:
 ----------------------
-1. Follow the 4 steps of OOA/D: First, do Generic Analysis -- make sure you 
+X1. Follow the 4 steps of OOA/D: First, do Generic Analysis -- make sure you 
    understand what you are being asked to do and the requirements. Second, do
    Generic Design -- think about your conceptual solution (you could just 
    doodle on a piece of paper or write down some ideas on a notepad. The point 
@@ -31,6 +31,7 @@ Instructions for Lab #3:
    your conceptual solution and your conceptual objects to the next level. Now
    you must skillfully assign responsibilities (methods and properties) to
    objects. This is where you start writing code.
+
 2. Which super classes should be concrete vs. abstract vs. Interface? 
    Justify your choices by adding comments to each class.
 3. Which properties should be declared in super classes and which
