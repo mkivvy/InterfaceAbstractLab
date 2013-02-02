@@ -1,0 +1,38 @@
+Deisgn a Practical Music Library System to store information on different musical recordings
+
+Different types of musical recordings have different pertinent information:
+
+Common attributes: recording type (cd/record/tape/mp3), album title (if there is one), 
+main genre
+
+Genre:
+Pop/Rock - album, song title, 	artist, group members?, composer?
+
+Classical - symphonic: album, name of piece, 	composer, conductor, symphony, 
+music classification (baroque,etc)
+
+Classical - sympohnic soloist:  album, name of piece, 	composer, soloist, conductor?, 
+symphony?, music classification (baroque,etc)
+
+Jazz - album, song title, 	main artist, group name, group members, composer
+
+Soundtrack - album, song title, 	show name, show composers, singers, production
+
+----------------------------------------------------------------------------------
+
+Commonalities: 
+	album title (if there is one)
+	main genre
+	recording type
+		For the commonalities there would be many songs/pieces
+
+Each album commonalities:
+	song title/name of piece
+
+Genre specific: there would be one set of these for each song/piece
+	Pop/Rock - artist, group members?, Xcomposer - not important to clientX
+	Jazz - soloists, group name, group members, composer
+	Soundtrack - singers, show name, show composers, production
+	Classical (All) - composer, music classification
+		(Sympohny) symphony, conductor
+			(Sympohnic solo) soloists
