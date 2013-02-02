@@ -3,8 +3,25 @@ package lab2;
 import javax.swing.JOptionPane;
 
 /**
+ * CourseCatalog implements the CourseWithPrereq interface.  As such, it
+ * contains fields for course name, course number, credits, number of prereqs,
+ * and a String array that holds the names of the courses that are preqs.
+ * All have getters and setters and the validation methods required by
+ * the interface.  The setters call the validation methods before setting the
+ * values.
  *
- * @author Mary
+ * This class adds a field, catalogSemester, for which the course is being
+ * offered.  It has a getter and setter and additional validation method for 
+ * this additional field.  
+ * This class uses JOptionPane for validation which limits calling programs to
+ * doing the same.  However, error messages need to be communicated somehow 
+ * and this was the method chosen for this application.
+ * This class also includes a toString method returning the data fields, except
+ * prereqs, as a string.  There is a separate method to return a string which
+ * includes all the prereqs, as required by the interface.
+ *
+ * @author Mary King
+ * @version 1.00
  */
 public class CourseCatalog implements CourseWithPrereq {
 

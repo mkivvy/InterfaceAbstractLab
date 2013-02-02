@@ -3,8 +3,26 @@ package lab2;
 import javax.swing.JOptionPane;
 
 /**
+ * LabCourse implements the CourseWithPrereq interface.  As such, it
+ * contains fields for course name, course number, credits, number of prereqs,
+ * and a String array that holds the names of the courses that are preqs.
+ * All have getters and setters and the validation methods required by
+ * the interface.  The setters call the validation methods before setting the
+ * values.
  *
- * @author Mary
+ * This class adds 2 fields: lab type which indicates what type of lab room is
+ * needed and number of lab hours per week which the course will need to have
+ * that type of lab available.  These have getters and setters and additional 
+ * validation methods for these additional fields.  
+ * This class uses JOptionPane for validation which limits calling programs to
+ * doing the same.  However, error messages need to be communicated somehow 
+ * and this was the method chosen for this application.
+ * This class also includes a toString method returning the data fields, except
+ * prereqs, as a string.  There is a separate method to return a string which
+ * includes all the prereqs, as required by the interface.
+ *
+ * @author Mary King
+ * @version 1.00
  */
 public class LabCourse implements CourseWithPrereq {
     private String courseName;

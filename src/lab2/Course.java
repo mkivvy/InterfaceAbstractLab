@@ -1,8 +1,17 @@
 package lab2;
 
 /**
+ * This interface class is intended to be used when defining college courses.
+ * It contains global constants for MIN_CREDITS and MAX_CREDITS using the 
+ * widest range of credits currently known. Child classes may use their own
+ * minimum & maximum number of credits, if necessary, but defining these as
+ * global constants means these values can easily be changed in just this one 
+ * place if the range changes. 
+ * - It requires implementation of of validation methods in the children,
+ * assuming the children will have these fields.
  *
- * @author Mary
+ * @author Mary King
+ * @version 1.00
  */
 public interface Course {
     //these contain the known min & max values allowed for number of

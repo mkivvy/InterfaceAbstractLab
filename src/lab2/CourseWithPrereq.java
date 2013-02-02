@@ -1,8 +1,13 @@
 package lab2;
 
 /**
+ * This interface class is intended to be used when defining college courses 
+ * that have prerequisites.  It extends the Course class so only adds 
+ * methods it requires for handling prerequisites: validatePrerequisites and
+ * getPrerequitesString.
  *
- * @author Mary
+ * @author Mary King
+ * @version 1.00
  */
 public interface CourseWithPrereq extends Course {
     
