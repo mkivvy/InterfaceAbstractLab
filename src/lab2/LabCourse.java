@@ -6,8 +6,7 @@ import javax.swing.JOptionPane;
  *
  * @author Mary
  */
-public class CourseCatalog implements CourseWithPrereq {
-
+public class LabCourse implements CourseWithPrereq {
     private String courseName;
     private String courseNumber;
     //number of credits the course is worth:
@@ -16,16 +15,18 @@ public class CourseCatalog implements CourseWithPrereq {
     private int numPrereqs;
     //String array holds the names of the courses that are preqs for this course
     private String[] prerequisites;
-    //semester in which the course is offered:
-    private String catalogSemester;
+    //specifies the type of lab required by the course:
+    private String labType;
+    //number of hours the course requires in the lab:
+    private double labHrs;
 
-    public CourseCatalog(String courseName, String courseNumber, 
-            double courseCredits, int numPrereqs) {
+    public LabCourse(String courseName, String courseNumber, double courseCredits, int numPrereqs) {
         this.courseName = courseName;
         this.courseNumber = courseNumber;
         this.courseCredits = courseCredits;
         this.numPrereqs = numPrereqs;
     }
+
 
     public void setCourseName(String courseName) {
         boolean passedValidation = validateCourseName(courseName);
@@ -55,7 +56,7 @@ public class CourseCatalog implements CourseWithPrereq {
     }
 
     public void setNumPrereqs(int numPrereqs) {
-        boolean passedValidation = validatetNumPrereqs(numPrereqs);
+        boolean passedValidation = validateNumPrereqs(numPrereqs);
         if (passedValidation) {
             this.numPrereqs = numPrereqs;
         } else {
@@ -81,12 +82,21 @@ public class CourseCatalog implements CourseWithPrereq {
         }
     }
     
-    public void setCatalogSemester(String catalogSemester) {
-        boolean passedValidation = validateCatalogSemester(catalogSemester);
+    public void setLabType(String labType) {
+        boolean passedValidation = validateLabType(labType);
         if (passedValidation) {
-            this.catalogSemester = catalogSemester;
+            this.labType = labType;
         } else {
-            this.catalogSemester = "Fall ";
+            this.labType = "Computer";
+        }
+    }
+
+    public void setLabHrs(double labHrs) {
+        boolean passedValidation = validateLabHrs(labHrs);
+        if (passedValidation) {
+            this.labHrs = labHrs;
+        } else {
+            this.labHrs = 0.0;
         }
     }
 
@@ -119,7 +129,7 @@ public class CourseCatalog implements CourseWithPrereq {
         return (true);
     }
 
-    public boolean validatetNumPrereqs(int numPrereqs) {
+    public boolean validateNumPrereqs(int numPrereqs) {
         if (numPrereqs < 0 || numPrereqs > 10) {
             JOptionPane.showMessageDialog(null,
                     "Error: Number of Prerequisites must be in the range "
@@ -145,10 +155,20 @@ public class CourseCatalog implements CourseWithPrereq {
         return true;
     }
 
-    public boolean validateCatalogSemester(String catalogSemester) {
-        if (catalogSemester == null || catalogSemester.length() == 0) {
+    public boolean validateLabType(String labType) {
+        if (labType == null || labType.length() == 0) {
             JOptionPane.showMessageDialog(null,
-                    "Error: Course Name cannot be null or empty string");
+                    "Error: Lab Type cannot be null or empty string");
+            return (false);
+        }
+        return (true);
+    }
+
+    public boolean validateLabHrs(double labHrs) {
+        if (labHrs < 0 || labHrs > 20) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: Number of Lab Hours must be in the range "
+                    + " 0 to 20 ");
             return (false);
         }
         return (true);
@@ -185,15 +205,19 @@ public class CourseCatalog implements CourseWithPrereq {
         return prereqList;
     }
 
-    public String getCatalogSemester() {
-        return catalogSemester;
+    public String getLabType() {
+        return labType;
+    }
+
+    public double getLabHrs() {
+        return labHrs;
     }
 
     @Override
     public String toString() {
         return ("Course: " + courseName + "\nNumber: " + courseNumber
-                + "\nCredits: " + courseCredits + "\nSemester: " 
-                + catalogSemester + "\nPrerequisites: "
+                + "\nCredits: " + courseCredits + "\nLab Type: " 
+                + labType + "\nLab Hours: " + labHrs + "\nPrerequisites: "
                 + (numPrereqs > 0 ? "yes" : "no"));
 
     }
