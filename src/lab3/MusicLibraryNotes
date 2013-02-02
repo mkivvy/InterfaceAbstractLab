@@ -22,7 +22,6 @@ Jazz - album, song title, 	main artist, group name, group members, composer
 Soundtrack - album, song title, 	show name, show composers, singers, production
 
 ----------------------------------------------------------------------------------
-
 Commonalities: 
 	album/grouping title (if there is one)
 	main genre
@@ -30,7 +29,7 @@ Commonalities:
 		For the commonalities there would be many songs/pieces
 
 Each album commonalities:
-	song title/name of piece
+	song title/name of piece, type of piece (song, symphony, solo)
 
 Genre specific: there would be one set of these for each song/piece
 	Pop/Rock - artist, group members?, Xcomposer - not important to clientX
@@ -42,12 +41,27 @@ Genre specific: there would be one set of these for each song/piece
 		(Solos) soloist, accompanist
 
 a separate class for group members? to be used in pop/rock & jazz? maybe later
+HAS A relationship, doesn't always apply
 ------------------------------------------------------------------------------
-Commonalities would be a superclass - called what? - abstract or interface?  
+Commonalities would be a superclass - abstract or interface?  
+- called what?Album, not a great name, what about recording?
 
 1st level child classes would be of 3 types each containing song title & info 
 specific to type - these could be concrete - end of the line at this point for
 3 types, but maybe not for classical
+OR could do a song level w/ just title & type
 
 2nd level child for classical - symphonic, symphonic w/ soloist, solo - these
 would be concrete
+---------------------------------------------------------------------
+What if song/piece is upper level? (Or genre? no genre applies to songs) 
+song/piece HAS A genre - where is there an IS A relationship???  
+in this scope song IS A recording, but none of the other attributes/groupings 
+IS A song - different TYPES of song 
+what about musical piece?  musical piece IS A recording, pop/rock song IS A 
+musical piece, classical musical piece IS A musical piece, soundtrack song IS A
+musical piece, jazz song IS A musical piece
+symphony IS A classical musical piece, classical solo is a classical musical
+piece
+so -- Recording - musical piece - pop/rock song/soundtrack/jazz song/classical 
+musical piece - symphony/classical solo
