@@ -46,9 +46,9 @@ public class AdvancedJavaCourse extends CourseDescription {
         setCourseHasPrerequisite(true); //prereq needed for this course
     }
 
-//    public final String[] getPrerequisites() {
-//        return prerequisites;
-//    }
+    public final String[] getPrerequisites() {
+        return prerequisites;
+    }
 
     public final String getPrerequitesString() {
         if (prerequisites == null || prerequisites.length == 0) {
@@ -62,7 +62,6 @@ public class AdvancedJavaCourse extends CourseDescription {
     }
 
     public final void setPrerequisites(String[] prerequisites) {
-
         if (prerequisites == null || prerequisites.length == 0) {
             JOptionPane.showMessageDialog(null,
                     "Error: at least one Prerequisites course is required");
