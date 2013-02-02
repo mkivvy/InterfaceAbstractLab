@@ -26,6 +26,13 @@ import javax.swing.JOptionPane;
  * Other things I did not like:
  * - I am still not comfortable being locked into using JOptionPane as the
  * method for communicating error messages.
+ * - Originally, I was intending to separate out the prerequisite course logic.  
+ * However, I couldn't find a way that made sense.  If I made it another 
+ * abstract class - either dependent on Course as a parent or as its own class, 
+ * I couldn't inherit from both in my CourseCatalog class.  I eventually
+ * decided just to contain the extra string array in the base class since it
+ * was only one more field that wouldn't have to be used.  Still, I wonder if
+ * this was a good decision.
  * 
  * Liskov Substitution principle:
  * I think this principle is more useful when there is more than one child class

@@ -29,7 +29,7 @@ X4. Create a startup class to test your code. In this startup class create and
 X5. In the startup class document what you think is good or bad about this
    architecture from the perspective of using abstraction and inheritance.
    (Remember, a startup class must have a main method)
-6. When declaring variables in your startup class consider using the 
+X6. When declaring variables in your startup class consider using the 
    Liskov Substitution principle. This is where you declare a variable using
    it's abstract type. For example, you could do this:
 
