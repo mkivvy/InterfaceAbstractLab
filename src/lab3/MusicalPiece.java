@@ -4,8 +4,16 @@ package lab3;
  *
  * @author Mary
  */
-public class MusicalPiece {
-    private String musicalPieceTitle;
-    private String musicalPieceType;
-    private String musicalPieceGenre;
+public interface MusicalPiece {
+    public String getMusicalPieceTitle();
+
+    public void setMusicalPieceTitle(String musicalPieceTitle);
+
+    public String getMusicalPieceType();
+
+    public void setMusicalPieceType(String musicalPieceType);
+
+    public String getMusicalPieceGenre();
+
+    public void setMusicalPieceGenre(String musicalPieceGenre);
 }

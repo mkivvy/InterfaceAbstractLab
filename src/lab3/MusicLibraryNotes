@@ -66,6 +66,6 @@ musical piece, jazz song IS A musical piece
 symphony IS A classical musical piece, classical solo is a classical musical
 piece
 so -- Recording - musical piece - pop/rock song (concrete)/soundtrack (concrete)
-/jazz song (concrete)/classical musical piece (abstract?) - 
+/jazz song (concrete)/classical musical piece (abstract?interface?) - 
 symphony/classical solo (concrete)
 for now leave out soundtrack type, just call pop/rock rock
