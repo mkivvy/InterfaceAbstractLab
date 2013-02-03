@@ -13,10 +13,18 @@ public class RockSong extends MusicalPiece {
     private String recordingGenre;
     private String recordingType;
     private String musicalPieceTitle;
-    private String musicalPieceType;
     private String musicalPieceGenre;
     private String rockGroupName; 
     private String[] groupMembers;
+
+    public RockSong(String recordingTitle, String recordingGenre, String recordingType, String musicalPieceTitle, String musicalPieceGenre, String rockGroupName) {
+        this.recordingTitle = recordingTitle;
+        this.recordingGenre = recordingGenre;
+        this.recordingType = recordingType;
+        this.musicalPieceTitle = musicalPieceTitle;
+        this.musicalPieceGenre = musicalPieceGenre;
+        this.rockGroupName = rockGroupName;
+    }
 
     public String getRecordingTitle() {
         return recordingTitle;
@@ -48,14 +56,6 @@ public class RockSong extends MusicalPiece {
 
     public void setMusicalPieceTitle(String musicalPieceTitle) {
         this.musicalPieceTitle = musicalPieceTitle;
-    }
-
-    public String getMusicalPieceType() {
-        return musicalPieceType;
-    }
-
-    public void setMusicalPieceType(String musicalPieceType) {
-        this.musicalPieceType = musicalPieceType;
     }
 
     public String getMusicalPieceGenre() {

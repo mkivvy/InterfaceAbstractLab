@@ -13,12 +13,21 @@ public class JazzSong extends MusicalPiece {
     private String recordingGenre;
     private String recordingType;
     private String musicalPieceTitle;
-    private String musicalPieceType;
     private String musicalPieceGenre;
     private String[] soloists;
     private String jazzGroupName; 
     private String[] groupMembers;
     private String composer;
+
+    public JazzSong(String recordingTitle, String recordingGenre, String recordingType, String musicalPieceTitle, String musicalPieceGenre, String jazzGroupName, String composer) {
+        this.recordingTitle = recordingTitle;
+        this.recordingGenre = recordingGenre;
+        this.recordingType = recordingType;
+        this.musicalPieceTitle = musicalPieceTitle;
+        this.musicalPieceGenre = musicalPieceGenre;
+        this.jazzGroupName = jazzGroupName;
+        this.composer = composer;
+    }
 
     public String getRecordingTitle() {
         return recordingTitle;
@@ -50,14 +59,6 @@ public class JazzSong extends MusicalPiece {
 
     public void setMusicalPieceTitle(String musicalPieceTitle) {
         this.musicalPieceTitle = musicalPieceTitle;
-    }
-
-    public String getMusicalPieceType() {
-        return musicalPieceType;
-    }
-
-    public void setMusicalPieceType(String musicalPieceType) {
-        this.musicalPieceType = musicalPieceType;
     }
 
     public String getMusicalPieceGenre() {

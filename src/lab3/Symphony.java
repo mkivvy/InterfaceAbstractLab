@@ -13,6 +13,14 @@ public class Symphony extends ClassicalMusicalPiece {
     private String symphonyOrchestra; 
     private String conductor;
 
+    public Symphony(String composer, String musicClassification, String symphonyOrchestra, String conductor, String recordingTitle, String recordingGenre, String recordingType, String musicalPieceTitle, String musicalPieceGenre) {
+        super(recordingTitle, recordingGenre, recordingType, musicalPieceTitle, musicalPieceGenre);
+        this.composer = composer;
+        this.musicClassification = musicClassification;
+        this.symphonyOrchestra = symphonyOrchestra;
+        this.conductor = conductor;
+    }
+
     public String getSymphonyOrchestra() {
         return symphonyOrchestra;
     }

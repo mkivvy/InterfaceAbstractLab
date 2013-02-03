@@ -14,6 +14,15 @@ public class ClassicalSolo extends ClassicalMusicalPiece {
     private String soloInstrument;
     private String accompanist;
 
+    public ClassicalSolo(String composer, String musicClassification, String soloist, String soloInstrument, String accompanist, String recordingTitle, String recordingGenre, String recordingType, String musicalPieceTitle, String musicalPieceGenre) {
+        super(recordingTitle, recordingGenre, recordingType, musicalPieceTitle, musicalPieceGenre);
+        this.composer = composer;
+        this.musicClassification = musicClassification;
+        this.soloist = soloist;
+        this.soloInstrument = soloInstrument;
+        this.accompanist = accompanist;
+    }
+
     public String getSoloist() {
         return soloist;
     }

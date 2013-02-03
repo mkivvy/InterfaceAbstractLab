@@ -17,8 +17,15 @@ public abstract class ClassicalMusicalPiece extends MusicalPiece {
     private String recordingGenre;
     private String recordingType;
     private String musicalPieceTitle;
-    private String musicalPieceType;
     private String musicalPieceGenre;
+
+    public ClassicalMusicalPiece(String recordingTitle, String recordingGenre, String recordingType, String musicalPieceTitle, String musicalPieceGenre) {
+        this.recordingTitle = recordingTitle;
+        this.recordingGenre = recordingGenre;
+        this.recordingType = recordingType;
+        this.musicalPieceTitle = musicalPieceTitle;
+        this.musicalPieceGenre = musicalPieceGenre;
+    }
 
     public abstract String getComposer();
 
@@ -58,14 +65,6 @@ public abstract class ClassicalMusicalPiece extends MusicalPiece {
 
     public void setMusicalPieceTitle(String musicalPieceTitle) {
         this.musicalPieceTitle = musicalPieceTitle;
-    }
-
-    public String getMusicalPieceType() {
-        return musicalPieceType;
-    }
-
-    public void setMusicalPieceType(String musicalPieceType) {
-        this.musicalPieceType = musicalPieceType;
     }
 
     public String getMusicalPieceGenre() {
