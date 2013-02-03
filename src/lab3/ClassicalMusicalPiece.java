@@ -1,10 +1,18 @@
 package lab3;
 
 /**
- *
- * @author Mary
+ * I decided to make this class abstract so I could implement the methods
+ * required by the abstract class  MusicalPiece here, but leave the Classical 
+ * Musical Piece methods to be implemented at the lowest level along with behaviors
+ * appropriate to the children.  This way  everything up the hierarchy is
+ * handled up to here and the children just have from this class on down to
+ * work with.  Methods for getting and setting the composer and the music
+ * classification (Baroque, Romantic, etc) and added here as these are common
+ * to classical musical pieces.
+ * @author Mary King
+ * @version 1.00
  */
-public abstract class ClassicalMusicalPiece implements MusicalPiece {
+public abstract class ClassicalMusicalPiece extends MusicalPiece {
     private String recordingTitle;
     private String recordingGenre;
     private String recordingType;

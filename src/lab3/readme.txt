@@ -32,12 +32,12 @@ X1. Follow the 4 steps of OOA/D: First, do Generic Analysis -- make sure you
    you must skillfully assign responsibilities (methods and properties) to
    objects. This is where you start writing code.
 
-2. Which super classes should be concrete vs. abstract vs. Interface? 
+X2. Which super classes should be concrete vs. abstract vs. Interface? 
    Justify your choices by adding comments to each class.
-3. Which properties should be declared in super classes and which
+X3. Which properties should be declared in super classes and which
    should be declared in the sub classes? Justify your choices by 
    adding comments to the property declarations.
-4. Which super class methods should be abstract vs. concrete. Justify your 
+X4. Which super class methods should be abstract vs. concrete. Justify your 
    choices by adding comments to the property declarations. If making a method
    concrete, should it be final? Comment as to why or why not.
 5. Can you think of any other ways to improve on this design? If so, 

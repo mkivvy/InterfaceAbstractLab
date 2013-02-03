@@ -1,8 +1,11 @@
 package lab3;
 
 /**
- *
- * @author Mary
+ * This class is at the bottom of the hierarchy so it needs to be concrete.
+ * Here I implement methods required by ClassicalMusicalPiece and include
+ * properties specific to ClassicalSolo: soloist, soloInstrument, and accompanist.
+ * @author Mary King
+ * @version 1.00
  */
 public class ClassicalSolo extends ClassicalMusicalPiece {
     private String composer; 

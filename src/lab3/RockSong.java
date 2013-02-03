@@ -1,10 +1,14 @@
 package lab3;
 
 /**
- *
- * @author Mary
+ * This class is at the bottom of the hierarchy so it needs to be concrete. 
+ * Here I implement methods from the interface Recording and the abstract class 
+ * MusicalPiece and include properties specific to RockSong: rockGroupName 
+ * and groupMembers.
+ * @author Mary King
+ * @version 1.00
  */
-public class RockSong implements MusicalPiece {
+public class RockSong extends MusicalPiece {
     private String recordingTitle;
     private String recordingGenre;
     private String recordingType;
