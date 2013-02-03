@@ -20,6 +20,7 @@ accompanist, music classification (baroque,etc)
 Jazz - album, song title, 	main artist, group name, group members, composer
 
 Soundtrack - album, song title, 	show name, show composers, singers, production
+Other - new age, childrens, folk could be implemented later
 
 ----------------------------------------------------------------------------------
 Commonalities: 
@@ -29,7 +30,8 @@ Commonalities:
 		For the commonalities there would be many songs/pieces
 
 Each album commonalities:
-	song title/name of piece, type of piece (song, symphony, solo)
+	song title/name of piece, type of piece (song, symphony, solo),
+        could have genre for piece
 
 Genre specific: there would be one set of these for each song/piece
 	Pop/Rock - artist, group members?, Xcomposer - not important to clientX
@@ -63,5 +65,7 @@ musical piece, classical musical piece IS A musical piece, soundtrack song IS A
 musical piece, jazz song IS A musical piece
 symphony IS A classical musical piece, classical solo is a classical musical
 piece
-so -- Recording - musical piece - pop/rock song/soundtrack/jazz song/classical 
-musical piece - symphony/classical solo
+so -- Recording - musical piece - pop/rock song (concrete)/soundtrack (concrete)
+/jazz song (concrete)/classical musical piece (abstract?) - 
+symphony/classical solo (concrete)
+for now leave out soundtrack type, just call pop/rock rock
